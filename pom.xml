@@ -57,6 +57,19 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- redis https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-redis/-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-redis</artifactId>
+			<version>1.4.5.RELEASE</version>
+		</dependency>
+		
+		<!--Gson-->  
+        <dependency>  
+            <groupId>com.google.code.gson</groupId>  
+            <artifactId>gson</artifactId>  
+        </dependency>  
+        
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
