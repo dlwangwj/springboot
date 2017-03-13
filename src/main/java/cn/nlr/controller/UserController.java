@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.nlr.model.User;
+import cn.nlr.service.IRedisService;
 import cn.nlr.service.UserService;
 
 @Controller
@@ -20,6 +21,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+	private IRedisService redisService;
 
 	@RequestMapping("/regiester")
 	public String regiester(Map<String, Object> model){
@@ -56,4 +60,10 @@ public class UserController {
 		 User user = userService.findUserById(id);
 		 return user;
     }
+	@RequestMapping("/redis/set")
+	@ResponseBody
+	public String redisSet(@RequestParam("value")String value){
+		boolean isOk = redisService.set("name", value);
+		return (isOk ? "success" : "error");
+	}
 }
